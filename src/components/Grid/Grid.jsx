@@ -25,25 +25,34 @@ function Grid({numberofcards}){
         setWinner(null);
         setBoard(Array(numberofcards).fill(""));
     }
-
-
-
-
+    function isDraw(board) {
+        return board.every(cell => cell !== "");
+    }
     return (
         <div className="grid-wrapper">
-            {
-                winner && (
-                    <>
-                    <h1 className="turn-highlight">Winner is {winner} </h1>
-                    <button className="reset" onClick ={reset}> Reset Game </button>
-                    </>
-                )
-            }
-            <h1 className="turn-highlight">Current turn : {(turn) ? 'O':'X'} </h1>
-            <div className="Grid">
-            {board.map((el, idx)=><Card gameEnd = {winner? true : false} key ={idx} onPlay={play} player={el} index={idx}/>)}
+        {
+            (winner || isDraw(board)) && (
+                <>
+                    {winner ? (
+                        <h1 className="turn-highlight">Winner is {winner}</h1>
+                    ) : (
+                        <h1 className="turn-highlight">It's a Draw!</h1>
+                    )}
+                    <button className="reset" onClick={reset}> Reset Game </button>
+                </>
+            )
+        }
+        {
+            !winner && !isDraw(board) && (
+                <h1 className="turn-highlight">Current turn : {turn ? 'O' : 'X'}</h1>
+            )
+        }
+        <div className="Grid">
+            {board.map((el, idx) => (
+                <Card gameEnd={winner || isDraw(board)} key={idx} onPlay={play} player={el} index={idx} />
+            ))}
         </div>
-        </div>
+    </div>
     );
 }
 export default Grid;
