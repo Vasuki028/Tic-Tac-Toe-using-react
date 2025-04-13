@@ -8,7 +8,7 @@
     margin : 0 auto;
 }
 .turn-highlight{
-    color : black;
+    color : white;
     display : flex;
     justify-content : center ;
     padding : 2px 2px 2px 2px;
@@ -16,7 +16,7 @@
 .reset{
     margin : 0 auto;
     background-color: #ffc107;;
-    color : black;
+    color : white;
     height : 50px;
     width : 70px;
     display: flex;
