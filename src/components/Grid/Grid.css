@@ -1,0 +1,29 @@
+.Grid{
+    display : flex;
+    width : 500px;
+    height : 500px;
+    flex-wrap : wrap;
+    justify-content : space-between;
+    align-items : center;
+    margin : 0 auto;
+}
+.turn-highlight{
+    color : black;
+    display : flex;
+    justify-content : center ;
+    padding : 2px 2px 2px 2px;
+}
+.reset{
+    margin : 0 auto;
+    background-color: #ffc107;;
+    color : black;
+    height : 50px;
+    width : 70px;
+    display: flex;
+    justify-content : center;
+    align-items : center;
+    font-weight : 500;
+    padding : 2px 2px 2px 2px;
+    border : 2px solid black;
+
+}
